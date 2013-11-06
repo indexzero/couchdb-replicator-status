@@ -1,0 +1,27 @@
+{
+  "name": "couchdb-replicator-status",
+  "version": "0.0.0",
+  "description": "Returns status of various replication tasks for a given CouchDB server",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "vows --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indexzero/couchdb-replicator-status"
+  },
+  "keywords": [
+    "couchdb",
+    "replicator",
+    "status"
+  ],
+  "author": "Charlie Robbins <charlie@nodejitsu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "~0.2.9",
+    "request": "~2.27.0"
+  },
+  "devDependencies": {
+    "vows": "~0.7.0"
+  }
+}
