@@ -11,5 +11,12 @@ replicatorStatus({
   url: process.argv[2],
   filters: process.argv.slice(3)
 }, function (err, results) {
-  console.dir(arguments);
+  if (err) {
+    console.error('Error getting status: ' + err);
+    return process.exit(1);
+  }
+
+  Object.keys(results).forEach(function (k) {
+    console.dir(results[k]);
+  })
 })
