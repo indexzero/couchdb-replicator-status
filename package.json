@@ -16,7 +16,7 @@
     "status"
   ],
   "author": "Charlie Robbins <charlie@nodejitsu.com>",
-  "license": "MIT",
+  "license": "(C) Nodejitsu 2013",
   "dependencies": {
     "async": "~0.2.9",
     "errs": "~0.2.4",
