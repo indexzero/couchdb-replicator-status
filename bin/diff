@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+var async = require('async'),
+    replicatorStatus = require('../lib');
+
+if (process.argv.length < 3) {
+  console.log('usage: diff [url] [timeout]');
+  return process.exit(1);
+}
+
+var url     = process.argv[2],
+    timeout = process.argv[3]
+      ? parseInt(process.argv[3])
+      : 5000;
+
+if (isNaN(timeout)) {
+  timeout = 5000;
+}
+
+//
+// ## function showDiff (err, stats)
+// Performs a diff for every status returns
+//
+function showDiff(err, stats) {
+  if (err) {
+    console.error('Error getting stats: ' + err);
+    return process.exit(1);
+  }
+
+  var lstats = stats[0],
+      rstats = stats[1];
+
+  Object.keys(lstats).forEach(function (id) {
+    console.log('Diffing ' + id);
+    console.dir(replicatorStatus.diff(rstats[id], lstats[id]));
+    console.log('');
+  });
+}
+
+console.log('Diffing ' + url + ' after ' + timeout + 'ms');
+async.mapSeries([1, 2], function (i, next) {
+  console.log(i + ' Querying ' + url);
+  replicatorStatus.status({ url: url }, function (err, status) {
+    setTimeout(function () {
+      return !err ? next(null, status) : next(err);
+    }, timeout);
+  });
+}, showDiff);
