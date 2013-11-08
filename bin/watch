@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var replicatorStatus = require('../lib');
+
+if (process.argv.length < 3) {
+  console.log('usage: watch [url] [filter0] [filter1] ...');
+  return process.exit(1);
+}
+
+var url    = process.argv[2];
+    filter = process.argv.slice(3);
+
+replicatorStatus.watch({
+  url:    url,
+  filter: filter
+}, function (err, status) {
+  if (err) {
+    console.error('Error getting status: ' + err);
+    return process.exit(1);
+  }
+
+  Object.keys(status).forEach(function (k) {
+    console.dir(status[k]);
+  })
+}).on('check', function () {
+  console.log('Watching ' + url);
+  if (filter.length) {
+    console.log('  filtering to ' + filter.join(', '));
+  }
+});
