@@ -3,20 +3,28 @@
 var replicatorStatus = require('../lib');
 
 if (process.argv.length < 3) {
-  console.log('usage: stats [url] [filter0] [filter1] ...');
+  console.log('usage: status [url] [filter0] [filter1] ...');
   return process.exit(1);
 }
 
-replicatorStatus({
-  url: process.argv[2],
-  filter: process.argv.slice(3)
-}, function (err, results) {
+var url    = process.argv[2];
+    filter = process.argv.slice(3);
+
+console.log('Querying ' + url);
+if (filter.length) {
+  console.log('  filtering to ' + filter.join(', '));
+}
+
+replicatorStatus.status({
+  url:    url,
+  filter: filter
+}, function (err, status) {
   if (err) {
     console.error('Error getting status: ' + err);
     return process.exit(1);
   }
 
-  Object.keys(results).forEach(function (k) {
-    console.dir(results[k]);
+  Object.keys(status).forEach(function (k) {
+    console.dir(status[k]);
   })
 })
