@@ -2,14 +2,14 @@
 
 var replicatorStatus = require('../lib');
 
-if (process.argv.length !== 3) {
+if (process.argv.length < 3) {
   console.log('usage: stats [url] [filter0] [filter1] ...');
   return process.exit(1);
 }
 
 replicatorStatus({
   url: process.argv[2],
-  filters: process.argv.slice(3)
+  filter: process.argv.slice(3)
 }, function (err, results) {
   if (err) {
     console.error('Error getting status: ' + err);

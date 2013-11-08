@@ -9,7 +9,7 @@ Retu sadfsadfrns status of various replication tasks for a given CouchDB server
 {
   'in:some-db': {
     id: 'in:some-db',
-    progress: 43.14,
+    progress: 45.12,
     reminaing: 45000000000,
     continuous: true,
     checkpointed_source_seq: 64858,
