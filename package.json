@@ -1,6 +1,6 @@
 {
   "name": "couchdb-replicator-status",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Returns status of various replication tasks for a given CouchDB server",
   "main": "lib/index.js",
   "scripts": {
@@ -24,5 +24,8 @@
   },
   "devDependencies": {
     "vows": "~0.7.0"
+  },
+  "publishConfig": {
+    "registry": "http://nj.npmjitsu.co"
   }
 }
