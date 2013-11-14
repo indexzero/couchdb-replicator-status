@@ -1,6 +1,6 @@
 {
   "name": "couchdb-replicator-status",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns status of various replication tasks for a given CouchDB server",
   "main": "lib/index.js",
   "scripts": {
