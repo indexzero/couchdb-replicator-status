@@ -26,6 +26,6 @@
     "vows": "~0.7.0"
   },
   "publishConfig": {
-    "registry": "http://nj.npmjitsu.co"
+    "registry": "https://us.registry.nodejitsu.com"
   }
 }
