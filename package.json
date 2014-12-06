@@ -8,22 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/indexzero/couchdb-replicator-status"
+    "url": "https://github.com/nodejitsu/couchdb-replicator-status"
   },
   "keywords": [
     "couchdb",
     "replicator",
     "status"
   ],
-  "author": "Charlie Robbins <charlie@nodejitsu.com>",
-  "license": "(C) Nodejitsu 2013",
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "async": "~0.2.9",
-    "errs": "~0.2.4",
-    "request": "~2.27.0"
+    "async": "~0.9.0",
+    "errs": "~0.3.2",
+    "request": "~2.49.0"
   },
   "devDependencies": {
-    "vows": "~0.7.0"
+    "vows": "~0.8.1"
   },
   "publishConfig": {
     "registry": "https://us.registry.nodejitsu.com"

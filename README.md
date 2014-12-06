@@ -89,6 +89,7 @@ Every time that `.status(options, callback)` is invoked it will respond to the c
        update_seq: '91.19' } } }
 ```
 
-**Note: All times from CouchDB are normalized to the epoch time strings the `new Date(str)` in Javascript would expect.** 
+**Note: All times from CouchDB are normalized to the epoch time strings the `new Date(str)` in Javascript would expect.**
 
-### Copyright (C) 2013 Nodejitsu Inc.
+##### Copyright (C) 2013 Charlie Robbins
+##### LICENSE: MIT
